@@ -1,0 +1,136 @@
+/* 공통영역 */
+
+.wrap, header, section, footer{
+    width: 100%;
+}
+
+
+
+/* 헤더, 푸터 공통 */
+
+header, footer{
+    padding: 0 50px;
+}
+
+@media screen and (max-width: 1200px) {
+    
+    header, footer{
+        padding: 0 20px;
+    }
+}
+
+
+/* section */
+
+section:not(.section_1){
+    padding: 100px 0;
+}
+
+.title{
+    letter-spacing: -1px;
+    margin-bottom: 115px;
+}
+
+.title>h2{
+    font-size: 72px;
+    font-weight: 700;
+    color: #202020;
+    margin-bottom: 8px;
+}
+
+.title>p{
+    font-size: 20px;
+    color: #5d5d5d;
+}
+
+@media screen and (max-width: 1200px) {
+
+   .title{
+    margin-bottom: 52px;
+   }
+
+   .title>h2{
+    font-size: 60px;
+    margin-bottom: 3px;
+   }
+
+   .title>p{
+    font-size: 18px
+   };
+    
+}
+
+
+@media screen and (max-width: 768px) {
+
+
+    section:not(.section_1){
+        padding: 70px 0;
+    }
+
+    .title{
+     margin-bottom: 52px;
+    }
+ 
+    .title>h2{
+     font-size: 36px;
+    }
+ 
+    .title>p{
+     font-size: 16px
+    };
+     
+ }
+
+
+
+/* section ineer */
+
+.section_inner{
+    max-width: 1283px;
+    height: inherit;
+    margin: 0 auto;
+    padding: 0 35px;
+}
+
+
+
+@media screen and (max-width: 1200px) {
+
+    
+    .section_inner{
+        max-width: 850px;
+    }
+
+    .inner_box{
+        margin: 0 20px;
+    }
+    
+}
+
+/* arrow btn */
+
+.arrow_btn{
+    width: 173px;
+    height: 48px;
+    margin: 60px auto;
+    background-color: #EEEEEE;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: -1px;
+    text-align: center;
+    line-height: 48px;
+}
+
+@media screen and (max-width: 768px) {
+
+    .arrow_btn {
+        width: 149px;
+        height: 41px;
+        line-height: 41px;
+    }
+    
+}
+
+
+

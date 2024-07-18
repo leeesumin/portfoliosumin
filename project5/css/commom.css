@@ -1,0 +1,80 @@
+/* 헤더, 섹션 공통 */
+
+.wrap, header, section, footer{
+    width: 100%;
+}
+
+
+.bottom_header, .top_footer, .bottom_footer{
+    padding: 0 100px;
+}
+
+
+.section_inner{
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section_2, .section_4{
+    margin: 105px 0 175px 0;
+}
+
+
+
+
+/* section_2 , section_5 공통*/
+
+.sec_title>h2 {
+    font-size: 48px;
+    font-weight: 500;
+    color: #101010;
+}
+
+.sec_title>p {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 49px 0 55px 0;
+    color: #707070;
+    line-height: 32px;
+
+}
+
+.more_btn_2 {
+    width: 198px;
+    height: 53px;
+    background-color: #FFFEF2;
+    border: solid #DBDBDB 1px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.more_btn_2 img {
+    width: 16.5px;
+}
+
+.sec_title {
+    letter-spacing: -1px;
+}
+
+
+.section_inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sec_2_bg_mo, .sec_5_bg_mo{
+    display: none;
+}
+
+
+@media screen and (max-width : 768px) {
+
+    .more_btn_2 {
+        width: 163px;
+        height: 37px;
+        font-size: 14px;
+    }
+    
+}

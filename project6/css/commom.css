@@ -1,0 +1,137 @@
+/* 전체 공통영역 */
+.wrap, header, section, footer{
+    width: 100%;
+}
+
+header, footer{
+    padding: 0 70px;
+}
+
+section:not(.section_1, .section_5){
+    padding: 90px 0;
+}
+
+@media screen and (max-width: 1600px) {
+
+    header, footer {
+        padding: 0 20px;
+    }
+
+}
+
+@media screen and (max-width: 768ox) {
+
+    header, footer {
+        padding: 0 16px;
+    }
+    
+}
+
+
+/* inner */
+
+.section_inner{
+    max-width: 1310px;
+    margin: 0 auto;
+    /* padding: 0 20px; */
+}
+
+@media screen and( max-width : 1200px) {
+
+    .section_inner{
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+}
+
+.sec_box{
+    margin: 0 20px;
+}
+
+
+/* 바로가기 */
+
+.arrow_btn {
+    font-size: 18px;
+    display: flex;
+    width: 107px;
+    justify-content: space-around;
+    align-items: center;
+    color: #272727;
+}
+
+.arrow_btn>img {
+    width: 24px;
+    height: 20px;
+}
+
+@media screen and (max-width : 768px) {
+
+    .arrow_btn>img {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .arrow_btn {
+        width: 92px;
+        font-size: 16px;
+    }
+
+}
+
+/* 타이틀 */
+
+.sec_title{
+    text-align: center;
+    letter-spacing: -2px;
+    margin-bottom: 70px;
+}
+
+.sec_title>h2{
+    color: #E80A4D;
+    font-size: 58px;
+    font-weight: 600;
+}
+
+.sec_title>p{
+    color: #777777;
+    font-size: 24px;
+    margin-top: -5px;
+}
+
+@media screen and (max-width : 1200px) {
+
+    .sec_title{
+        margin-bottom: 50px;
+    }
+
+    .sec_title>h2{
+        font-size: 48px;
+    }
+
+    .sec_title>p{
+        font-size: 20px;
+    }
+    
+}
+
+
+@media screen and (max-width : 768px) {
+
+    .sec_title{
+        margin-bottom: 50px;
+        letter-spacing: -1px;
+    }
+
+    .sec_title>h2{
+        font-size: 38px;
+    }
+
+    .sec_title>p{
+        font-size: 16px;
+    }
+
+
+    
+}
