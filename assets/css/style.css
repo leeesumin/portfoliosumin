@@ -43,6 +43,7 @@ h6 {
   color: #ffffff;
   font-weight: 400;
   font-family: 'Noto Sans KR', sans-serif;
+  font-size: 1.5rem;
   position: relative;
   left: 40%;
   width: 52%;
@@ -94,9 +95,50 @@ p {
 .div3>.text2{float: right;}
 
 .container{padding-left: 31px;}
-.skill1{width: 32%; padding-top: 80px; float: left;}
-.skill2{width: 32%; padding-top: 80px; float: left;}
+.skill1{width: 32%; padding-top: 80px; float: left; margin-right: 2%;}
+.skill2{width: 32%; padding-top: 80px; float: left; margin-right: 2%;}
 .skill3{width: 32%; padding-top: 80px; float: left; }
+
+/* 480px 이하 해상도에서 skill padding-top 제거 */
+@media (max-width: 480px) {
+  .skill1, .skill2, .skill3 {
+    padding-top: 0;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+/* 스킬 그래프 스타일 */
+.skill-graph {
+  margin-top: 20px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.skill-bar {
+  width: 100%;
+  height: 20px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.skill-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #03004c, #4a90e2);
+  border-radius: 10px;
+  width: 0%;
+  transition: width 2s ease-out;
+}
+
+.skill-percent {
+  font-size: 18px;
+  font-weight: bold;
+  color: #03004c;
+}
 
 
 
@@ -304,7 +346,7 @@ p {
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  color: #03004c
+  color: #03004c;
   white-space: nowrap;
   transition: 0.3s;
 }
@@ -513,6 +555,32 @@ p {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  position: relative;
+}
+
+/* 동그란 원형 애니메이션 스타일 */
+.rolling-circle {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: rgba(255, 255, 255, 0.2); /* 화이트색으로 채우고 30% 불투명도 */
+  border-radius: 50%;
+  top: 50%;
+  left: -220px; /* 좌측에서 시작 (원형 크기 고려) */
+  transform: translateY(-50%);
+  opacity: 1;
+  /* JavaScript에서 애니메이션을 제어하므로 여기서는 제거 */
+}
+
+@keyframes rollFromLeft {
+  0% {
+    left: -220px;
+    transform: translateY(-50%) rotate(0deg);
+  }
+  100% {
+    left: calc(100% - 220px); /* 우측 끝에 도착 (원형 크기 고려) */
+    transform: translateY(-50%) rotate(360deg);
+  }
 }
 
 .hero-content h1 {
@@ -774,10 +842,24 @@ p {
 
 .re-link{
   position: absolute;
-  right: 34px;
-  font-size: 24px;
+  right: 120px;
+  font-size: 14px;
   top: calc(50% - 18px);
-  color: #b8a07e;
+  color: #03004c;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid #03004c;
+}
+
+.re-link:hover {
+  background-color: #03004c;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 #portfolio .portfolio-item .portfolio-info .preview-link:hover,
@@ -787,6 +869,22 @@ p {
 
 #portfolio .portfolio-item .portfolio-info .details-link {
   right: 10px;
+  font-size: 14px;
+  color: #03004c;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid #03004c;
+}
+
+#portfolio .portfolio-item .portfolio-info .details-link:hover {
+  background-color: #03004c;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 #portfolio .portfolio-item:hover .portfolio-info {
@@ -1619,3 +1717,310 @@ blockquote {
     margin-right: 0;
   }
 }
+
+/*--------------------------------------------------------------
+# Portfolio Lightbox Styles
+--------------------------------------------------------------*/
+.portfolio-lightbox {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.portfolio-lightbox:hover {
+  transform: scale(1.05);
+}
+
+/* GLightbox Custom Styles */
+.glightbox-container {
+  z-index: 9999;
+}
+
+.gbtn {
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  position: absolute;
+  z-index: 1000;
+}
+
+.gbtn:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: scale(1.1);
+}
+
+.gclose {
+  top: 20px;
+  right: 20px;
+}
+
+.gprev {
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.gnext {
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.gslide {
+  position: relative;
+}
+
+.gslide-image {
+  max-width: 100% !important;
+  max-height: 100vh !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
+
+.gslide-description {
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 15px;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* Navigation arrows for mobile */
+@media (max-width: 768px) {
+  .gbtn {
+    height: 40px;
+    width: 40px;
+  }
+  
+  .gclose {
+    top: 10px;
+    right: 10px;
+  }
+  
+  .gprev {
+    left: 10px;
+  }
+  
+  .gnext {
+    right: 10px;
+  }
+}
+
+/* 라이트박스 이미지가 잘리지 않도록 추가 스타일 */
+.gslide-media {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 100vh !important;
+  padding: 20px !important;
+  overflow: visible !important;
+  min-height: 100vh !important;
+}
+
+.gslide-media img {
+  max-width: 100% !important;
+  max-height: 90vh !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  display: block !important;
+}
+
+/* GLightbox 내부 이미지 강제 스타일 */
+.gslide-image {
+  max-width: 100% !important;
+  max-height: 90vh !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+/* 라이트박스 컨테이너 전체 크기 조정 */
+.glightbox-container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 100vh !important;
+}
+
+/* 슬라이드 컨테이너 크기 조정 */
+.gslide {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 100vh !important;
+  padding: 20px !important;
+}
+
+/* 라이트박스 컨테이너 크기 조정 */
+.gcontainer {
+  max-width: 95vw !important;
+  max-height: 95vh !important;
+}
+
+.gslider {
+  max-width: 100% !important;
+  max-height: 100% !important;
+}
+
+/* 모바일에서도 이미지가 잘리지 않도록 */
+@media (max-width: 768px) {
+  .gslide-media {
+    padding: 10px !important;
+  }
+  
+  .gslide-media img {
+    max-width: 95vw !important;
+    max-height: 85vh !important;
+  }
+  
+  .gcontainer {
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+  }
+  
+  .gslide-image {
+    max-width: 95vw !important;
+    max-height: 85vh !important;
+  }
+}
+
+/* 모든 GLightbox 이미지에 강제 적용 */
+.glightbox-container img,
+.gslide img,
+.gslide-image,
+.gslide-media img {
+  max-width: 90vw !important;
+  max-height: 90vh !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  display: block !important;
+  margin: 0 auto !important;
+  position: relative !important;
+  left: 0 !important;
+  top: 0 !important;
+  transform-origin: center center !important;
+  transform: scale(1) !important;
+  float: none !important;
+  clear: both !important;
+}
+
+/* 제목과 설명 숨기기 */
+.gslide-description,
+.gslide-title,
+.gslide-caption {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* 이미지 확대/축소 스타일 */
+.gslide-media img {
+  cursor: zoom-in !important;
+  transition: all 0.3s ease !important;
+  position: relative !important;
+  left: 0 !important;
+  top: 0 !important;
+  transform-origin: center center !important;
+  transform: scale(1) !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+}
+
+.gslide-media img.zoomed {
+  cursor: zoom-out !important;
+  transform: scale(1.5) !important;
+  z-index: 1000 !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5) !important;
+  position: relative !important;
+  left: 0 !important;
+  top: 0 !important;
+  margin: 0 auto !important;
+}
+
+/* 모든 이미지에 클릭 가능하도록 강제 적용 */
+.gslide-media img,
+.gslide-image,
+.gslide img {
+  pointer-events: auto !important;
+  cursor: zoom-in !important;
+}
+
+/* 확대된 이미지 호버 효과 */
+.gslide-media img:hover:not(.zoomed) {
+  transform: scale(1.02) !important;
+}
+
+.gslide-media img.zoomed:hover {
+  transform: scale(1.5) !important;
+}
+
+/* 이미지 컨테이너 중앙 정렬 강화 */
+.gslide-media {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden !important;
+}
+
+/* 이미지가 컨테이너 중앙에 정확히 위치하도록 */
+.gslide-media > * {
+  margin: 0 auto !important;
+  display: block !important;
+  position: relative !important;
+  left: 0 !important;
+  top: 0 !important;
+}
+
+/* 라이트박스 오버레이 크기 조정 */
+.goverlay {
+  min-height: 100vh !important;
+}
+
+/* 슬라이더 컨테이너 크기 조정 */
+.gslider {
+  min-height: 100vh !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* 라이트박스 이미지 순서 제어 */
+.gslide {
+  order: attr(data-index);
+}
+
+/* 포트폴리오 아이템 내 이미지 순서 */
+.portfolio-info .portfolio-lightbox:nth-child(1) { order: 1; }
+.portfolio-info .portfolio-lightbox:nth-child(2) { order: 2; }
+.portfolio-info .portfolio-lightbox:nth-child(3) { order: 3; }
+.portfolio-info .portfolio-lightbox:nth-child(4) { order: 4; }
+.portfolio-info .portfolio-lightbox:nth-child(5) { order: 5; }
+
+/* 포스 디자인 갤러리 이미지 순서 제어 */
+[data-gallery="posGallery1"] .portfolio-lightbox:nth-child(1) { order: 1; }
+[data-gallery="posGallery1"] .portfolio-lightbox:nth-child(2) { order: 2; }
+[data-gallery="posGallery1"] .portfolio-lightbox:nth-child(3) { order: 3; }
+[data-gallery="posGallery1"] .portfolio-lightbox:nth-child(4) { order: 4; }
+[data-gallery="posGallery1"] .portfolio-lightbox:nth-child(5) { order: 5; }
