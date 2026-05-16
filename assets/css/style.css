@@ -1015,6 +1015,497 @@ p {
 }
 
 /*--------------------------------------------------------------
+# E-commerce Branding
+--------------------------------------------------------------*/
+#ecommerce-branding {
+  background: #ececee;
+}
+
+#ecommerce-branding .ecom-template {
+  margin-top: 30px;
+}
+
+#ecommerce-branding .ecom-top-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
+#ecommerce-branding .ecom-card {
+  background: #f8f8f8;
+  border-radius: 26px;
+  padding: 36px 40px;
+  min-height: 100%;
+}
+
+#ecommerce-branding .ecom-card--visual {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 22px 26px;
+  min-height: 520px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+#ecommerce-branding .ecom-card--visual h3 {
+  margin: 0 0 14px 0;
+  flex-shrink: 0;
+}
+
+#ecommerce-branding .ecom-card-visual--large {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+}
+
+#ecommerce-branding .ecom-card-visual--large img {
+  width: 100%;
+  height: auto;
+  max-height: min(440px, 55vh);
+  object-fit: contain;
+  border-radius: 16px;
+}
+
+#ecommerce-branding .ecom-mini-reels--large {
+  flex: 1;
+  margin-bottom: 0;
+  min-height: 0;
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  align-items: stretch;
+  gap: 8px;
+  box-sizing: border-box;
+}
+
+#ecommerce-branding .ecom-mini-reels--large.ecom-mini-reels--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(10px, 3%, 18px);
+  align-content: center;
+}
+
+#ecommerce-branding .ecom-mini-reels--large .ecom-reel {
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 9 / 16;
+  height: auto;
+}
+
+#ecommerce-branding .ecom-result.ecom-card--visual {
+  min-height: 0;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 24px 28px;
+  background: #f8f8f8;
+  border-radius: 0x;
+}
+
+#ecommerce-branding .ecom-result.ecom-card--visual h3 {
+  margin: 0 0 18px 0;
+  flex-shrink: 0;
+  font-size: 32px;
+  font-weight: 700;
+  color: #111111;
+  letter-spacing: -0.02em;
+}
+
+#ecommerce-branding .ecom-result.ecom-card--visual .ecom-result-stack {
+  flex: 0 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 0;
+  width: 100%;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+}
+
+#ecommerce-branding .ecom-result.ecom-card--visual .ecom-result-box--large {
+  flex: 0 0 auto;
+  margin: 0;
+  margin-top: 40px;
+  padding: 26px 24px 30px;
+  text-align: left;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.08);
+}
+
+#ecommerce-branding .ecom-result.ecom-card--visual .ecom-result-box--large .ecom-result-amount {
+  font-size: clamp(36px, 4.8vw, 46px);
+  font-weight: 800;
+  line-height: 1.12;
+  color: #1a1a5c;
+  letter-spacing: -0.035em;
+  margin: 0;
+}
+
+#ecommerce-branding .ecom-result.ecom-card--visual .ecom-result-date {
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #9a9a9a;
+  letter-spacing: 0.06em;
+}
+
+#ecommerce-branding .ecom-result.ecom-card--visual .ecom-result-label {
+  margin-bottom: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #111111;
+}
+
+#ecommerce-branding .ecom-result.ecom-card--visual .ecom-result-stats {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px 28px;
+  padding: 2px 6px 0;
+  margin: 0;
+}
+
+#ecommerce-branding .ecom-result.ecom-card--visual .ecom-stat-item {
+  flex: 1 1 0;
+  gap: 12px;
+  min-width: 0;
+  align-items: center;
+}
+
+#ecommerce-branding .ecom-result.ecom-card--visual .ecom-stat-item i {
+  font-size: 35px;
+  color: #1a1a1a;
+  font-weight: 400;
+  line-height: 1;
+}
+
+#ecommerce-branding .ecom-result.ecom-card--visual .ecom-stat-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  min-width: 0;
+}
+
+#ecommerce-branding .ecom-result.ecom-card--visual .ecom-stat-label {
+  font-size: 16px;
+  line-height: 1.3;
+  font-weight: 400;
+  color: #a3a3a3;
+}
+
+#ecommerce-branding .ecom-result.ecom-card--visual .ecom-stat-value {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111111;
+  line-height: 1.2;
+}
+
+#ecommerce-branding .ecom-step {
+  display: block;
+  font-size: 13px;
+  color: #b0b0b0;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+#ecommerce-branding .ecom-card h3 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 12px 0;
+  color: #111111;
+}
+
+#ecommerce-branding .ecom-chip {
+  display: inline-block;
+  font-size: 12px;
+  border: 1px solid #cccccc;
+  border-radius: 50px;
+  padding: 5px 15px;
+  margin: 0 0 22px 0;
+  color: #444444;
+  background: transparent;
+}
+
+#ecommerce-branding .ecom-card-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 24px;
+  align-items: center;
+}
+
+#ecommerce-branding .ecom-card-split ul {
+  margin: 0;
+  padding-left: 18px;
+  color: #555555;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+#ecommerce-branding .ecom-card-visual {
+  margin: 0;
+}
+
+#ecommerce-branding .ecom-card-visual img {
+  width: 100%;
+  border-radius: 14px;
+  object-fit: contain;
+  display: block;
+}
+
+#ecommerce-branding .ecom-mini-reels {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+#ecommerce-branding .ecom-reel {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  background: #e0e0e0;
+  min-width: 0;
+  max-width: 100%;
+}
+
+#ecommerce-branding .ecom-reel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+#ecommerce-branding .ecom-reel-play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+#ecommerce-branding .ecom-reel-play i {
+  font-size: 28px;
+  color: #ffffff;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.45));
+}
+
+#ecommerce-branding .ecom-reel-views {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+#ecommerce-branding .ecom-card-desc-line {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.65;
+  color: #555555;
+  text-align: center;
+}
+
+#ecommerce-branding .ecom-card-desc-line + .ecom-card-desc-line {
+  margin-top: 4px;
+}
+
+#ecommerce-branding .ecom-result-box {
+  margin-top: 8px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 22px 20px 24px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
+  text-align: left;
+}
+
+#ecommerce-branding .ecom-result-date {
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  color: #6b6b6b;
+  text-align: left;
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+}
+
+#ecommerce-branding .ecom-result-label {
+  display: block;
+  font-size: 17px;
+  font-weight: 700;
+  color: #111111;
+  margin-bottom: 12px;
+}
+
+#ecommerce-branding .ecom-result-amount {
+  display: block;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #1a1a5c;
+  letter-spacing: -0.03em;
+}
+
+#ecommerce-branding .ecom-result-stats {
+  margin-top: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px 8px;
+  padding: 0 2px;
+}
+
+#ecommerce-branding .ecom-stat-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  flex: 1 1 0;
+  min-width: 0;
+  text-align: left;
+}
+
+#ecommerce-branding .ecom-stat-item i {
+  flex-shrink: 0;
+  font-size: 24px;
+  color: #2a2a2a;
+  font-weight: normal;
+  line-height: 1;
+}
+
+#ecommerce-branding .ecom-stat-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  min-width: 0;
+}
+
+#ecommerce-branding .ecom-stat-label {
+  font-size: 11px;
+  line-height: 1.35;
+  color: #a8a8a8;
+  font-weight: 400;
+}
+
+#ecommerce-branding .ecom-stat-value {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111111;
+  line-height: 1.2;
+}
+
+#ecommerce-branding .ecom-bottom-grid {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+#ecommerce-branding .ecom-thumb {
+  margin: 0;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+#ecommerce-branding .ecom-thumb img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+#ecommerce-branding .ecom-thumb figcaption {
+  padding: 10px 12px 12px;
+  font-size: 14px;
+  color: #444444;
+}
+
+#ecommerce-branding .ecom-quote {
+  margin: 0;
+  background: linear-gradient(145deg, #252766, #12143f);
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 26px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#ecommerce-branding .ecom-quote p {
+  margin: 0 0 16px 0;
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+#ecommerce-branding .ecom-quote span {
+  font-size: 13px;
+  color: #d2d4ff;
+}
+
+@media (max-width: 991px) {
+  #ecommerce-branding .ecom-top-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #ecommerce-branding .ecom-card-split {
+    grid-template-columns: 1fr;
+  }
+
+  #ecommerce-branding .ecom-bottom-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 575px) {
+  #ecommerce-branding .ecom-bottom-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #ecommerce-branding .ecom-card h3 {
+    font-size: 24px;
+  }
+
+  #ecommerce-branding .ecom-result-amount {
+    font-size: 32px;
+  }
+
+  #ecommerce-branding .ecom-result.ecom-card--visual .ecom-result-box--large .ecom-result-amount {
+    font-size: clamp(28px, 8vw, 34px);
+  }
+
+  #ecommerce-branding .ecom-result-stats {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  #ecommerce-branding .ecom-stat-item {
+    flex: none;
+  }
+}
+
+/*--------------------------------------------------------------
 # Journal
 --------------------------------------------------------------*/
 #contact {
